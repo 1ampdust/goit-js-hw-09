@@ -12,12 +12,12 @@ formPromise.addEventListener('submit', evt => {
       Number(evt.currentTarget.delay.value) +
       Number(evt.currentTarget.step.value) * i;
     createPromise(position, passedStep)
-      .then(value => {
-        Notify.success(value);
+      .then(message => {
+        Notiflix.Notify.success(message);
         formPromise.reset();
       })
-      .catch(value => {
-        Notify.failure(value);
+      .catch(message => {
+        Notiflix.Notify.failure(message);
       });
   }
 });
